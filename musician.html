@@ -5,73 +5,65 @@
         </head>
     
     <body>
-
     <h2>Musician guess by Ambica Peruru</h2>
-
     <form>
 
         <label for="form_name">Enter the secret musician name:</label>
-
         <input type ="password" id="form_name" name="form_name" min=10 max=50 step=2 value="John Lennon"> <br>
-
         <label for="form_guess">Guess the musician:</label>
-
         <input type ="text" id="form_guess" name="form_guess" autofocus> <br>
-
         <input type="button" onclick="checkGuess()" value="Check the Guess">
 
     </form>
 
-
     <script>
-
-        var correct = 0
-        
-        var wrong = 0
-        
-        
-        
-        function checkGuess(){
-        
-            console.log("Getting form values")
-        
-            Name = document.getElementById("form_name").value
-        
-            Guess = document.getElementById("form_guess").value
-        
-        
-        
-        
-        
-            out = document.getElementById("result")
-        
-            if(Name==Guess){
-        
-                correct = correct+1;
-        
-                alert("You got it right");
-        
-                out.innerHTML = correct;
-        
-            } else {
-        
-                wrong = wrong +1;
-        
-                alert("Wrong musician");
-        
-                out.innerHTML = wrong;
-        
-                if(wrong>=3){
-        
-                    WrongAlert()
-        
-                }
-        
-            }
-        
-        }
-        
+        var correct = 0        
+        var wrong = 0    
+                
+        function checkGuess(){        
+            console.log("Getting form values")        
+            Name = document.getElementById("form_name").value        
+            Guess = document.getElementById("form_guess").value     
+                           
+            out = document.getElementById("result")        
+            if(Name==Guess){        
+                correct = correct+1;        
+                alert("You got it right");        
+                out.innerHTML = correct;        
+            } else {        
+                wrong = wrong +1;        
+                alert("Wrong musician");        
+                out.innerHTML = wrong;        
+                if(wrong>=3){        
+                    WrongAlert()        
+                }        
+            }        
+        }        
         </script>
+        <br>
+         <div class="container">
+            <img src="Red beetle.jpg" class="bordered mx-auto d-block" width="100px" height="100px" alt="Red beetle" id="images" onclick="swapImage()">
+        </div>
+        <script>
+                let useImage = 1
+                function swapImage(){
+                switch(useImage){
+                    case 1:
+                        document.getElementById("images").src="Elephant hawk moth.jpg";
+                        useImage+=1;
+                        break;
+                        case 2:
+                        document.getElementById("images").src="Red beetle.jpg";
+                        useImage+=1;
+                        break;
+                        case 3:
+                        document.getElementById("images").src="Ulysses Butterfly.jpg";
+                        useImage=1;
+                        break;
+                    }
+                }
+            </script>
+           
 
     </body>
     </html> 
